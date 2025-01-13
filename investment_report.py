@@ -6,7 +6,7 @@ print("-" * 70)
 total_invested = 0
 total_current = 0
 
-num = int(input("How many investments? "))
+num = int(input("How many investments are there? "))
 for _ in range(num):
     name = input("\nInvestment name: ")
     invested = float(input("Amount invested: "))
