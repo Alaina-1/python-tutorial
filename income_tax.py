@@ -1,13 +1,21 @@
-income = float(input("Enter your income: "))
-if income <= 250000:
-    tax = 0
-elif income <= 500000:
-    tax = 0.05 * (income - 250000)
-elif income <= 100000:
-    tax = 1250 + 0.1 * (income - 500000)  
-elif income <= 150000:
-    tax = 6250 + 0.15 * (income - 1000000)  
-else:
-    tax = 11250 + 0.2 * (income - 1500000)  
 
-print("Income tax: ", tax)
+income = float(input("Enter your annual income: ₹"))
+tax = 0
+
+if income <= 300000:
+    tax = 0
+elif income <= 600000:
+    tax = (income - 300000) * 0.05
+elif income <= 900000:
+    tax = (income- 600000) *0.10 + 15000
+elif income <= 1200000:
+    tax = (income -900000) *0.15 + 45000
+elif income <= 1500000:
+    tax = (income - 1200000) *0.20 + 90000
+else:
+    tax = (income - 1500000) *0.30 + 150000
+
+tax += tax * 0.04
+
+print(" total tax " ,tax)
+ 
