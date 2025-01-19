@@ -15,7 +15,5 @@ elif income <= 1500000:
 else:
     tax = (income - 1500000) *0.30 + 150000
 
-tax += tax * 0.04
-
 print(" total tax " ,tax)
  
