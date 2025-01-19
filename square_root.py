@@ -8,6 +8,10 @@ else:
         if number==z*z:
             break
         z=z+1
-    
-print("root:",z)
+    z = (z + number / z) / 2
+    err = abs(number - z**2)
+    if err==0:
+        print("the square root of",number,"is:",z)
+    else:
+        print("it is not a perfect square")
     
