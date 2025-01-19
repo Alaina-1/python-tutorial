@@ -1,5 +1,5 @@
 
-income = float(input("Enter your annual income: ₹"))
+income = float(input("Enter your annual income: "))
 tax = 0
 
 if income <= 300000:
