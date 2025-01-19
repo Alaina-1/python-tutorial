@@ -1,9 +1,10 @@
 number = int(input("Enter a number: "))
-if num < 0:
+if number < 0:
     print("Square root is not possible for negative numbers ")
 else:
-    for  num in number/2:
-        z=1
+    z=1
+    for  num in range(number):
+      
         if number==z*z:
             break
         z=z+1
