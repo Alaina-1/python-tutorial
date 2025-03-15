@@ -7,15 +7,22 @@ class GuessingGame(EasyFrame):
         super().__init__(title="Number Guessing Game")
         self.setSize(400, 200)
         self.setResizable(False)
-        self.secret_number = random.randint(1, 100)
-        self.attempts = 0
         self.addLabel("Guess a number between 1 and 100!", row=0, column=0, columnspan=2, sticky="NSEW")
         self.inputField = self.addIntegerField(value=0, row=1, column=0, sticky="EW")
-        self.addButton("Check", row=1, column=1, command=self.check_guess)
+        self.addButton("Guess", row=1, column=1, command=self.check_guess)
         self.resultLabel = self.addLabel("", row=2, column=0, columnspan=2, sticky="NSEW")
+        self.addButton("Restart", row=3, column=0, columnspan=2, command=self.new_game)
+        self.new_game()
+
+    def new_game(self):
+        """Resets the game with a new random number."""
+        self.secret_number = random.randint(1, 100)
+        self.attempts = 0
+        self.resultLabel["text"] = ""
+        self.inputField["state"] = "normal"
+        self.inputField.setNumber(0)
 
     def check_guess(self):
-        """Handles the user's guess and provides feedback."""
         user_guess = self.inputField.getNumber()
         self.attempts += 1
 
